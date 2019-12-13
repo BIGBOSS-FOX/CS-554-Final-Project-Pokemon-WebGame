@@ -28,39 +28,84 @@ class Signup extends Component {
         })
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        // console.log(this.state);
+
+        await this.setState({usernameExist: false})
+
         for (let i = 0; i < this.props.fetch_mongodb.userList.length; i++) {
             console.log("Signup handleSubmit() this.props.fetch_mongodb.userList[i].userName")
             console.log(this.props.fetch_mongodb.userList[i].userName)
             if (this.state.username.toLowerCase() === this.props.fetch_mongodb.userList[i].userName) {
-                // setTimeout(function(){
-                //     this.setState({
-                //         usernameExist: true
-                //     });
-                // },100)
-                this.setState({
-                    usernameExist: true
-                }, () => {
-                    console.log("Signup handleSubmit() this.state before breaking for loop ")
-                    console.log(this.state)
-                    if (!this.state.usernameExist) {
-                        console.log("Signup handleSubmit() fire signUp()")
-                        this.props.signUp(this.state)
-                    }         
-                });
-
+                await this.setState({usernameExist: true})
+                console.log("Signup handleSubmit() this.state before breaking for loop ")
+                console.log(this.state)
                 break;
             }
         }
 
+        
+
+
+        // console.log(this.state);
+        // this.setState({
+        //     usernameExist: false
+        // }, () => {
+        //     for (let i = 0; i < this.props.fetch_mongodb.userList.length; i++) {
+        //         console.log("Signup handleSubmit() this.props.fetch_mongodb.userList[i].userName")
+        //         console.log(this.props.fetch_mongodb.userList[i].userName)
+        //         if (this.state.username.toLowerCase() === this.props.fetch_mongodb.userList[i].userName) {
+        //             // setTimeout(function(){
+        //             //     this.setState({
+        //             //         usernameExist: true
+        //             //     });
+        //             // },100)
+        //             this.setState({
+        //                 usernameExist: true
+        //             }, () => {
+        //                 console.log("Signup handleSubmit() this.state before breaking for loop ")
+        //                 console.log(this.state)
+        //                 if (!this.state.usernameExist) {
+        //                     console.log("Signup handleSubmit() fire signUp()")
+        //                     this.props.signUp(this.state)
+        //                 }         
+        //             });
+    
+        //             break;
+        //         }
+        //     }
+        // })
+
+        // for (let i = 0; i < this.props.fetch_mongodb.userList.length; i++) {
+        //     console.log("Signup handleSubmit() this.props.fetch_mongodb.userList[i].userName")
+        //     console.log(this.props.fetch_mongodb.userList[i].userName)
+        //     if (this.state.username.toLowerCase() === this.props.fetch_mongodb.userList[i].userName) {
+        //         // setTimeout(function(){
+        //         //     this.setState({
+        //         //         usernameExist: true
+        //         //     });
+        //         // },100)
+        //         this.setState({
+        //             usernameExist: true
+        //         }, () => {
+        //             console.log("Signup handleSubmit() this.state before breaking for loop ")
+        //             console.log(this.state)
+        //             if (!this.state.usernameExist) {
+        //                 console.log("Signup handleSubmit() fire signUp()")
+        //                 this.props.signUp(this.state)
+        //             }         
+        //         });
+
+        //         break;
+        //     }
+        // }
+
         console.log("Signup handleSubmit() this.state after for loop ")
         console.log(this.state)
-        // if (!this.state.usernameExist) {
-        //     console.log("Signup handleSubmit() fire signUp()")
-        //     this.props.signUp(this.state)
-        // }         
+        if (!this.state.usernameExist) {
+            console.log("Signup handleSubmit() fire signUp()")
+            this.props.signUp(this.state)
+        }         
             
     }
 
