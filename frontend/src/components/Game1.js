@@ -44,11 +44,10 @@ export class Game1 extends Component {
             bestScore: 0,
             round: 1,
             battleMessage: [[0, 'game started']]
-            // 记录敌人monster的血量，打死换怪，同时更新score和bestScore，根据属性掉血。
+        
         };
     }
     componentDidMount() {
-        // console.log("******        !!!!");
         // console.log(this.props.location.state.userId)
         this.initialUserInfo();
         this.initialEnemyInfo();
@@ -216,7 +215,7 @@ export class Game1 extends Component {
         let attackHP = 0;
         if (_attackType === 0) {
             //normal attack
-            attackHP = 20;
+            attackHP = 25;
         } else {
             // SP_attack
             switch (this.state.monsterType) {
