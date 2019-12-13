@@ -53,11 +53,12 @@ export const signUp = (newUser) => {
             newUser.email,
             newUser.password
         ).then((res) => {
-            // console.log(res);
+            console.log("authAction.js signUp res from firebase")
+            console.log(res);
             // use res.user.uid to create a new user in mongodb
             return axios.post('http://localhost:5000/users/add', {
                 userId: res.user.uid.toString(),
-                eMail: newUser.email.toString(),
+                eMail: res.user.email.toString(),
                 userName: newUser.username.toString(),
                 passWord: newUser.password.toString()
 
