@@ -11,7 +11,8 @@ const Leaderboard = ({userList}) => {
     console.log(sortedUserList)
 
     return (
-        <div className="container">
+        // <div className="container">
+        <div>
             <h2 className="pink-text text-darken-1 center">Leaderboard</h2>
             <table className="highlight">
                 <thead>

@@ -7,12 +7,65 @@ import { logOut, fetchUserInfo} from '../store/actions/authAction'
 import { fetchAllUsers } from '../store/actions/fetchAction'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios';
+import Split from 'react-split';
+// import 'react-photoswipe/lib/photoswipe.css';
+// import {PhotoSwipe} from 'react-photoswipe';
+
+// let isOpen = true;
+ 
+// let items = [
+//   {
+//     src: 'http://lorempixel.com/1200/900/sports/1',
+//     w: 1200,
+//     h: 900,
+//     title: 'Image 1'
+//   },
+//   {
+//     src: 'http://lorempixel.com/1200/900/sports/2',
+//     w: 1200,
+//     h: 900,
+//     title: 'Image 2'
+//   }
+// ];
+ 
+// let options = {
+//   //http://photoswipe.com/documentation/options.html
+// };
 
 class User extends Component {
     // state = {
-    //     username: '',
-    //     email: ''
+    //     isOpen: true,
+    //     items: [
+    //         {
+    //           src: 'http://lorempixel.com/1200/900/sports/1',
+    //           w: 1200,
+    //           h: 900,
+    //           title: 'Image 1'
+    //         },
+    //         {
+    //           src: 'http://lorempixel.com/1200/900/sports/2',
+    //           w: 1200,
+    //           h: 900,
+    //           title: 'Image 2'
+    //         }
+    //     ],
+    //     options: {
+    //         //http://photoswipe.com/documentation/options.html
+    //     }
     // }
+
+ 
+     
+    // handleClose = () => {
+    //     this.setState({
+    //         isOpen: false
+    //     })
+    // };
+
+
+
+
+
     componentDidMount() {
         console.log('User.js componentDidMount() props before fetchUserInfo')
         console.log(this.props)
@@ -40,6 +93,7 @@ class User extends Component {
         console.log(auth_firebase.uid)
         return (
             <div className="container">
+                {/* <PhotoSwipe isOpen={this.state.isOpen} items={this.state.items} options={this.state.options} onClose={this.handleClose}/> */}
                 <h1 className="center cyan-text text-darken-3">Welcome {auth_mongodb.userInfo.userName}</h1>
                 <div className="col s12 m6 center">
                         {/* <Link to={'/'}> */}
@@ -66,7 +120,17 @@ class User extends Component {
                         <Leaderboard userList={this.props.fetch_mongodb.userList}/>
                     </div>
                 </div>
+            
+                {/* <Split
+                    sizes={[50, 50]}
+                    direction='horizontal'
+                    minSize={100}
+                >
+                    <History bestScore={this.props.auth_mongodb.userInfo.bestScore}/>
+                    <Leaderboard userList={this.props.fetch_mongodb.userList}/>
+                </Split> */}
             </div>
+            
 
         )
     }

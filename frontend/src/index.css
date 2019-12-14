@@ -38,3 +38,14 @@ code {
 .newgame {
   margin-top: 20px;
 }
+
+.gutter {
+  height: 100%;
+  background: red;
+  cursor: col-resize;
+}
+
+.row.content {
+  display: flex;
+  flex-direction: row;
+}
