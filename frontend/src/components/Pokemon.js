@@ -26,8 +26,78 @@ export class Pokemon extends Component {
         this.state = {
             user: null,
             userId: null,
+            showme1:true,
+            showme2:true,
+            showme3:true,
+            showme4:true,
+            showme5:true,
+            showme6:true,
+            showme7:true,
+            showme8:true,
+            showme9:true,
+            showme10:true,
             Yourpokemons: []
         };
+    }
+
+    operation1(){
+        this.setState({
+            showme1:false,  
+        })
+    }
+
+    operation2(){
+        this.setState({
+            showme2:false,  
+        })
+    }
+
+    operation3(){
+        this.setState({
+            showme3:false,  
+        })
+    }
+
+    operation4(){
+        this.setState({
+            showme4:false,  
+        })
+    }
+
+    operation5(){
+        this.setState({
+            showme5:false,  
+        })
+    }
+
+    operation6(){
+        this.setState({
+            showme6:false,  
+        })
+    }
+
+    operation7(){
+        this.setState({
+            showme7:false,  
+        })
+    }
+
+    operation8(){
+        this.setState({
+            showme8:false,  
+        })
+    }
+
+    operation9(){
+        this.setState({
+            showme9:false,  
+        })
+    }
+
+    operation10(){
+        this.setState({
+            showme10:false,  
+        })
     }
 
     // 测试
@@ -129,9 +199,8 @@ export class Pokemon extends Component {
                 {this.handleChange}{' '}
                 <div className="row">
                     <nav className="col s12 m2 l2 teal lighten-4">
-                            <h5> Your Pokemon </h5>{' '}
                             <button
-                                className="waves-effect waves-light btn-small pulse"
+                                className=" waves-effect waves-light btn-small pulse"
                                 onClick={async() => {
                                 const  user = await axios.get(`http://localhost:5000/users/${this.props.location.state.userId}`)
                                 console.log("user object from mongodb");
@@ -150,11 +219,22 @@ export class Pokemon extends Component {
                             >
                                 START{' '}
                             </button>{' '}
-                            <button  className="waves-effect waves-light btn-small"  
+                            <button  className=" waves-effect waves-light btn-small"  
                             onClick={async()=>{
                                 await axios.put(`http://localhost:5000/users/monster/user/clearmonster/${this.props.location.state.userId}`)
                                 this.setState((state) => ({
+                                    showme1:true,
+                                    showme2:true,
+                                    showme3:true,
+                                    showme4:true,
+                                    showme5:true,
+                                    showme6:true,
+                                    showme7:true,
+                                    showme8:true,
+                                    showme9:true,
+                                    showme10:true,
                                     Yourpokemons: []
+                                    
                                 }));
                             }}>CLEAR</button>
                             <ul>
@@ -162,15 +242,8 @@ export class Pokemon extends Component {
                                 {
                                 // async () => {const  user = await axios.get(`http://localhost:5000/users/${this.props.auth_mongodb.userInfo._id}`)
                                this.state.Yourpokemons.map((item) => (
-                                    <li key={item.id}>
+                                    <li className="col 12" key={item.id}>
                                         <h5 className="red-text"> {item.name} </h5>{' '}
-                                        {/* <button
-                                            className="waves-effect waves-light btn-small"
-                                            type="button"
-                                            onClick={() => this.onRemoveItem(item.id)}
-                                        >
-                                            Remove{' '}
-                                        </button>{' '} */}
                                     </li>
                                 ))}{' '}
                             </ul>{' '}
@@ -184,6 +257,7 @@ export class Pokemon extends Component {
                     </nav>{' '}
                     <div className="col s12 m10 l10">
                         <div className="row">
+                            { this.state.showme1?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -223,6 +297,7 @@ export class Pokemon extends Component {
                                                             ]
                                                         }));
                                                 await axios.put(`http://localhost:5000/users/${this.props.location.state.userId}/add/Bulbasaur` );
+                                                {this.operation1()}
                                                 // const  user2 = await axios.get(`http://localhost:5000/users/${this.props.auth_mongodb.userInfo._id}`)
                                                 // console.log(user2.data.monster)
                                                     } else {
@@ -238,7 +313,10 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
+                            :null
+                            }
 
+                            { this.state.showme2?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -275,8 +353,9 @@ export class Pokemon extends Component {
                                                         }));
                                                         await axios.put(
                                                             `http://localhost:5000/users/${this.props.location.state.userId}/add/Charmander`)
-                                                    const  user2 = await axios.get(`http://localhost:5000/users/${this.props.location.state.userId}`)
-                                                    console.log(user2.data.monster)
+                                                            {this.operation2()}
+                                                    // const  user2 = await axios.get(`http://localhost:5000/users/${this.props.location.state.userId}`)
+                                                    // console.log(user2.data.monster)
                                                     } else {
                                                         {
                                                             window.alert("You can't choose more than 5 pokemons");
@@ -290,7 +369,10 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
+                            :null
+                            }
 
+                           { this.state.showme3?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -328,8 +410,9 @@ export class Pokemon extends Component {
                                                         await axios.put(
                                                             `http://localhost:5000/users/${this.props.location.state.userId}/add/Electabuzz`
                                                         );
-                                                        const  user2 = await axios.get(`http://localhost:5000/users/${this.props.location.state.userId}`)
-                                                    console.log(user2.data.monster)
+                                                        {this.operation3()}
+                                                    //     const  user2 = await axios.get(`http://localhost:5000/users/${this.props.location.state.userId}`)
+                                                    // console.log(user2.data.monster)
                                                     } else {
                                                         {
                                                             window.alert("You can't choose more than 5 pokemons");
@@ -343,7 +426,10 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
-
+                            :null
+                        }
+    
+                            { this.state.showme4?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -380,6 +466,7 @@ export class Pokemon extends Component {
                                                         }));
                                                         await axios.put(
                                                             `http://localhost:5000/users/${this.props.location.state.userId}/add/Growlithe`)
+                                                            {this.operation4()}
                                                                 // const  user2 = await axios.get(`http://localhost:5000/users/${this.props.auth_mongodb.userInfo._id}`)
                                                                 // console.log(user2.data.monster)
                                                     } else {
@@ -395,7 +482,10 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
-
+                             :null
+                            }
+                            
+                            { this.state.showme5?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -433,6 +523,7 @@ export class Pokemon extends Component {
                                                         await axios.put(
                                                             `http://localhost:5000/users/${this.props.location.state.userId}/add/Meowth`
                                                         );
+                                                        {this.operation5()}
                                                     } else {
                                                         {
                                                             window.alert("You can't choose more than 5 pokemons");
@@ -446,7 +537,10 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
-
+                            :null
+                        }
+                            
+                            { this.state.showme6?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -490,6 +584,7 @@ export class Pokemon extends Component {
                                                         await axios.put(
                                                             `http://localhost:5000/users/${this.props.location.state.userId}/add/Oddish`
                                                         );
+                                                        {this.operation6()}
                                                     } else {
                                                         {
                                                             window.alert("You can't choose more than 5 pokemons");
@@ -503,7 +598,10 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
-
+                              :null
+                            }
+                            
+                            { this.state.showme7?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -541,6 +639,7 @@ export class Pokemon extends Component {
                                                         await axios.put(
                                                             `http://localhost:5000/users/${this.props.location.state.userId}/add/Pikachu`
                                                         );
+                                                        {this.operation7()}
                                                     } else {
                                                         {
                                                             window.alert("You can't choose more than 5 pokemons");
@@ -554,7 +653,10 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
+                             :null
+                            }
 
+                            { this.state.showme8?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -592,6 +694,7 @@ export class Pokemon extends Component {
                                                         await axios.put(
                                                             `http://localhost:5000/users/${this.props.location.state.userId}/add/Psyduck`
                                                         );
+                                                        {this.operation8()}
                                                     } else {
                                                         {
                                                             window.alert("You can't choose more than 5 pokemons");
@@ -605,7 +708,10 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
-
+                            :null
+                        }
+ 
+                             {this.state.showme9?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -643,6 +749,7 @@ export class Pokemon extends Component {
                                                         await axios.put(
                                                             `http://localhost:5000/users/${this.props.location.state.userId}/add/Rattata`
                                                         );
+                                                        {this.operation9()}
                                                     } else {
                                                         {
                                                             window.alert("You can't choose more than 5 pokemons");
@@ -656,7 +763,10 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
-
+                            :null
+                        }
+                            
+                            {this.state.showme10?
                             <div className="col s12 m6 l4">
                                 <div className="card">
                                     <div className="card-image">
@@ -694,6 +804,7 @@ export class Pokemon extends Component {
                                                         await axios.put(
                                                             `http://localhost:5000/users/${this.props.location.state.userId}/add/Squirtle`
                                                         );
+                                                        {this.operation10()}
                                                     } else {
                                                         {
                                                             window.alert("You can't choose more than 5 pokemons");
@@ -707,6 +818,8 @@ export class Pokemon extends Component {
                                     </div>{' '}
                                 </div>{' '}
                             </div>
+                              :null
+                            }
                         </div>{' '}
                     </div>{' '}
                 </div>{' '}
