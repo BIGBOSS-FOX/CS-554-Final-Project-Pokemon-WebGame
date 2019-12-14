@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { logIn } from '../store/actions/authAction'
+import { logIn, clearAuthError } from '../store/actions/authAction'
 import { Redirect } from 'react-router-dom'
 
 
@@ -9,6 +9,11 @@ class Login extends Component {
     state = {
         email: '',
         password: ''
+    }
+
+    handleClick = () => {
+        this.props.clearAuthError();
+        this.props.history.push({ pathname: `/signup` });
     }
 
     handleChange = (e) => {
@@ -64,9 +69,9 @@ class Login extends Component {
                 <div>
                     <p className="pink-text text-lighten-1">Don't have an account?</p>
                     <div className="margintop1">
-                        <Link to={'/signup'}>
-                                <button className="waves-effect waves-light btn">Signup</button>
-                        </Link>
+                        {/* <Link to={'/signup'}> */}
+                                <button className="waves-effect waves-light btn" onClick={this.handleClick}>Signup</button>
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>
@@ -86,7 +91,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     console.log('Login.js mapDispatchToProps dispatching actions')
     return {
-        logIn: (creds) => dispatch(logIn(creds))
+        logIn: (creds) => dispatch(logIn(creds)),
+        clearAuthError: () => dispatch(clearAuthError())
     }
 }
 

@@ -88,6 +88,12 @@ const authReducer = (state = initState, action) => {
                 ...state,
                 authError: action.err.message               
             }
+        case 'CLEAR_AUTHERROR':
+            console.log('authReducer.js CLEAR_AUTHERROR')
+            return {
+                ...state,
+                authError: null
+            }
         // case 'FETCHCLEAR_SUCCESS':
         //     console.log('authReducer.js FETCHCLEAR_SUCCESS')
         //     return {

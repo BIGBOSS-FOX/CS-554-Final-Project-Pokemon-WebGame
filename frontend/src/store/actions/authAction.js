@@ -90,6 +90,12 @@ export const fetchUserInfo = (email) => {
     }
 }
 
+export const clearAuthError = () => {
+    return (dispatch, getState) => [
+        dispatch({ type: 'CLEAR_AUTHERROR' })
+    ]
+}
+
 // export const fetchAllUsers = () => {
 //     return (dispatch, getState) => {
 //         const res = await axios.get('http://localhost:5000/users/')

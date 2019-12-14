@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { signUp } from '../store/actions/authAction'
+import { signUp, clearAuthError } from '../store/actions/authAction'
 import { Redirect } from 'react-router-dom'
 import { fetchAllUsers } from '../store/actions/fetchAction'
 
@@ -20,6 +20,11 @@ class Signup extends Component {
         // this.setState({
         //     email: this.props.auth_firebase.email
         // })
+    }
+
+    handleClick = () => {
+        this.props.clearAuthError();
+        this.props.history.push({ pathname: `/login` });
     }
 
     handleChange = (e) => {
@@ -44,7 +49,7 @@ class Signup extends Component {
             }
         }
 
-        
+
 
 
         // console.log(this.state);
@@ -111,8 +116,8 @@ class Signup extends Component {
 
     render() {
         const { auth_mongodb, auth_firebase, fetch_mongodb } = this.props;
-        // console.log("Signup.js render() first user's userName")
-        // console.log(fetch_mongodb.userList[0])
+        console.log("Signup.js render() this.props")
+        console.log(this.props)
         if (!auth_firebase.isLoaded) return <p>authenticating...</p>
         if (auth_firebase.uid) return <Redirect to= {'/user/' + auth_firebase.uid} />
         return (
@@ -142,9 +147,9 @@ class Signup extends Component {
                 <div>
                     <p className="pink-text text-lighten-1">Already have an account?</p>
                     <div className="margintop1">
-                        <Link to={'/login'}>
-                                <button className="waves-effect waves-light btn">Login</button>
-                        </Link>
+                        {/* <Link to={'/login'}> */}
+                                <button className="waves-effect waves-light btn" onClick={this.handleClick}>Login</button>
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>
@@ -164,7 +169,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         signUp: (newUser) => dispatch(signUp(newUser)),
-        fetchAllUsers: () => dispatch(fetchAllUsers())
+        fetchAllUsers: () => dispatch(fetchAllUsers()),
+        clearAuthError: () => dispatch(clearAuthError())
     }
 }
 
