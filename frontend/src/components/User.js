@@ -7,7 +7,8 @@ import { logOut, fetchUserInfo} from '../store/actions/authAction'
 import { fetchAllUsers } from '../store/actions/fetchAction'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios';
-import Split from 'react-split';
+import SplitPane, {Pane} from 'react-split-pane'
+// import Split from 'react-split';
 // import 'react-photoswipe/lib/photoswipe.css';
 // import {PhotoSwipe} from 'react-photoswipe';
 
@@ -112,15 +113,30 @@ class User extends Component {
                         </Link>
                     </div> */}
                 </div>
-                <div className='row'>
+                {/* <div className='row'>
                     <div className="col s12 m6 center">
                         <History bestScore={this.props.auth_mongodb.userInfo.bestScore}/>
                     </div>
                     <div className="col s12 m6 center">
                         <Leaderboard userList={this.props.fetch_mongodb.userList}/>
                     </div>
-                </div>
+                </div> */}
             
+                {/* <div className="content">
+                    <Split
+                        gutterSize={20}
+                        sizes= {[25,25,50]}
+                        minSize={[300,300,300]}
+                        >
+                        <div className="cell a">A</div>
+                        <div className="cell b">B</div>
+                        <div className="cell c">C</div>
+                    </Split>
+
+                </div> */}
+
+
+
                 {/* <Split
                     sizes={[50, 50]}
                     direction='horizontal'
@@ -129,6 +145,23 @@ class User extends Component {
                     <History bestScore={this.props.auth_mongodb.userInfo.bestScore}/>
                     <Leaderboard userList={this.props.fetch_mongodb.userList}/>
                 </Split> */}
+
+                <SplitPane split="vertical" minSize={400} maxSize = {1200} defaultSize={800}>
+                    {/* <div><History bestScore={this.props.auth_mongodb.userInfo.bestScore}/></div>
+                    <div><Leaderboard userList={this.props.fetch_mongodb.userList}/></div> */}
+                    <Pane initialSize="50%" minSize="10%" maxSize="500px">  
+                        {/* <div className="col s12 m6 center"> */}
+                        <History bestScore={this.props.auth_mongodb.userInfo.bestScore}/>
+                        {/* </div> */}
+                    </Pane>
+                    <Pane initialSize="50%" minSize="10%" maxSize="500px">    
+                        {/* <div className="col s12 m6 center"> */}
+                        <Leaderboard userList={this.props.fetch_mongodb.userList}/>
+                        {/* </div> */}
+                    </Pane>
+                </SplitPane>
+
+
             </div>
             
 
