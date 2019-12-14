@@ -5,8 +5,8 @@ const History = ({bestScore}) => {
     console.log(bestScore)
     return (
         <div className="container">
-            <h4 className="pink-text text-lighten-1 center">Your Highest Score</h4>
-            <h4 className="pink-text text-lighten-1 center">{bestScore}</h4>
+            <h2 className="pink-text text-darken-1 center">Your Highest Score</h2>
+            <h3 className="pink-text text-darken-1 center">{bestScore}</h3>
         </div>
     )
 }

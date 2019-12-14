@@ -40,23 +40,23 @@ class User extends Component {
         console.log(auth_firebase.uid)
         return (
             <div className="container">
-                <h2 className="center cyan-text text-accent-3">Welcome {auth_mongodb.userInfo.userName}</h2>
+                <h1 className="center cyan-text text-darken-3">Welcome {auth_mongodb.userInfo.userName}</h1>
                 <div className="col s12 m6 center">
                         {/* <Link to={'/'}> */}
-                            <button className="btn pink lighten-1 z-depth-1" onClick={this.props.logOut}>Logout</button>
+                            <button className="btn pink darken-1 z-depth-1" onClick={this.props.logOut}>Logout</button>
                         {/* </Link> */}
                 </div>
-                <div className='row'>
-                    <div className="col s12 m6 center">
+                <div className='row center newgame'>
+                    {/* <div className="col s12 m6 center"> */}
                         {/* <Link to={'/pokemon'}> */}
-                            <button className="waves-effect waves-light btn-large cyan pulse" onClick={this.handleClick}>New Game</button>
+                            <button className="waves-effect waves-light btn-large cyan darken-3 pulse" onClick={this.handleClick}>New Game</button>
                         {/* </Link> */}
-                    </div>
-                    <div className="col s12 m6 center">
+                    {/* </div> */}
+                    {/* <div className="col s12 m6 center">
                         <Link to={'/game'}>
                             <button className="waves-effect waves-light btn-large">Resume Game</button>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='row'>
                     <div className="col s12 m6 center">
