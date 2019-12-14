@@ -1,3 +1,5 @@
 node_modules/
 frontend/package-lock.json
 backend/package-lock.json
+*.mp4
+*.zip

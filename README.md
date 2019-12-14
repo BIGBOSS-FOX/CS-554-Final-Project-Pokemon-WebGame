@@ -7,7 +7,7 @@ Group Members:  • Daoyuan Chen 10371489
 github repository: https://github.com/Taochai/Pokemon-WebGame
 
 
----> go into    /backend, run node seed.
+---> go into    /backend, run npm run-script seed.
 ---> run npm start in /backned, npm start in /frontend. 
 ---> /home              click  GALLERY to show all monsters informamtion
                         click  LOGIN to log in with an already exist account. to page /user
