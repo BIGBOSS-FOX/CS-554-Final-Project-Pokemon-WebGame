@@ -1,6 +1,8 @@
 // import firebase from 'firebase'
 import { getFirebase } from 'react-redux-firebase'
 import axios from 'axios'
+import bcrypt from 'bcryptjs'
+var salt = bcrypt.genSaltSync(10);
 
 export const logIn = (credentials) => {
     return (dispatch, getState) => {
@@ -55,12 +57,13 @@ export const signUp = (newUser) => {
         ).then((res) => {
             console.log("authAction.js signUp res from firebase")
             console.log(res);
+            var hash = bcrypt.hashSync(newUser.password, salt);
             // use res.user.uid to create a new user in mongodb
             return axios.post('http://localhost:5000/users/add', {
                 userId: res.user.uid.toString(),
                 eMail: res.user.email.toString(),
                 userName: newUser.username.toString(),
-                passWord: newUser.password.toString()
+                passWord: hash.toString()
 
             })
         }).then((res) => {

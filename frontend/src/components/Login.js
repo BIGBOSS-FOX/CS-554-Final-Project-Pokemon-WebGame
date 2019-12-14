@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logIn, clearAuthError } from '../store/actions/authAction'
 import { Redirect } from 'react-router-dom'
+// import bcrypt from 'bcryptjs'
+// var salt = bcrypt.genSaltSync(10);
 
 
 class Login extends Component {
@@ -24,6 +26,8 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        // var hash_password = bcrypt.hashSync(this.state.password, salt);
+        // await this.setState({password: hash_password});
         console.log('Login.js handleSubmit() state before logIn')
         console.log(this.state);
         this.props.logIn(this.state)
