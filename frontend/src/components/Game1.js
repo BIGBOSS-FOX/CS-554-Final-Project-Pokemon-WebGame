@@ -49,16 +49,16 @@ export class Game1 extends Component {
     }
     componentDidMount() {
         // console.log(this.props.location.state.userId)
-        this.initialUserInfo();
+       
+             this.initialUserInfo();
         this.initialEnemyInfo();
+        
+       
     }
 
     initialUserInfo = async () => {
         try {
-            if(!this.props.location.state){
-                window.location.href = '/';
-                return;
-            }
+       
             const userInfo = await axios.get(`http://localhost:5000/users/${this.props.location.state.userId}`);
             // const userInfo = await axios.get(`http://localhost:5000/users/5df23bbc0b15274608137d6b`);
             const allMonsters = userInfo.data.monster;
@@ -335,6 +335,7 @@ export class Game1 extends Component {
         // if(this.state.currentScore>)
     }
     ShowUserInfo = () => {
+     
         return (
             <div className="card-panel pink lighten-5">
                 <p> User: {this.state.userName} </p> <p> Monster: {this.state.monster} </p>  {' '}
@@ -354,10 +355,15 @@ export class Game1 extends Component {
         );
     };
     ShowMonsterImg = () => {
+      
         return <img src={this.state.monsterImg} width="100" />;
     };
 
     render() {
+        if(!this.props.location.state){
+            window.location.href = '/';
+            return;
+        }
         return (
             <div className="row">
                 <div className="col s4"> {this.ShowUserInfo()} </div> {' '}
