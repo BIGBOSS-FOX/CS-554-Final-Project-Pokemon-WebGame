@@ -53,7 +53,7 @@ class Login extends Component {
         return (
             <div className='container'>
                 <form className="white" onSubmit={this.handleSubmit}>
-                    <h5 className="pink-text text-lighten-1">Login</h5>
+                    <h1 className="pink-text text-lighten-1">Login</h1>
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
                         <input type="email" id='email' onChange={this.handleChange} />
@@ -71,7 +71,7 @@ class Login extends Component {
                     </div>
                 </form>
                 <div>
-                    <p className="pink-text text-lighten-1">Don't have an account?</p>
+                    <p className="blue-text text-darken-3">Don't have an account?</p>
                     <div className="margintop1">
                         {/* <Link to={'/signup'}> */}
                                 <button className="waves-effect waves-light btn" onClick={this.handleClick}>Signup</button>

@@ -12,7 +12,7 @@ const Leaderboard = ({userList}) => {
 
     return (
         <div className="container">
-            <h4 className="pink-text text-lighten-1 center">Leaderboard</h4>
+            <h2 className="pink-text text-darken-1 center">Leaderboard</h2>
             <table className="highlight">
                 <thead>
                 <tr>

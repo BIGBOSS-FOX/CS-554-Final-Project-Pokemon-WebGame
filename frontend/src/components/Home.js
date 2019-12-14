@@ -24,7 +24,7 @@ class Home extends Component {
         return (
             <div className="container">
                 <div className="title home">
-                    <h1 className="center cyan-text text-accent-3 brand-logo">Welcome To Pokemon Master</h1>
+                    <h1 className="center cyan-text text-darken-3 brand-logo">Welcome To Pokemon Master</h1>
                     {/* <Link to={'/test'}>
                         <p className="center">To Test Page</p>
                     </Link> */}
