@@ -195,7 +195,6 @@ export class Pokemon extends Component {
 
         return (
             <div className="container teal lighten-4">
-                {' '}
                 {this.handleChange}{' '}
                 <div className="row">
                     <nav className="col s12 m2 l2 teal lighten-4">
@@ -267,7 +266,7 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="green-text text-darken-3"> Bulbasaur </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 SP 20 </h6> <h6> HP 100 Type: Grass </h6>{' '}
+                                        <p> ATK 25 SP 20 </p> <p> HP 100 Type: Grass </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
@@ -326,7 +325,8 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="red-text text-darken-2"> Charmander </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 SP 20 </h6> <h6> HP 100 Type: Fire </h6>{' '}
+                                        <p> ATK 25 SP 20 </p> 
+                                        <p> HP 100 Type: Fire </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
@@ -382,7 +382,7 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="lime-text text-darken-2"> Electabuzz </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 SP 20 </h6> <h6> HP 100 Type: Electric </h6>{' '}
+                                        <p> ATK 25 SP 20 </p> <p> HP 100 Type: Electric </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
@@ -439,7 +439,7 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="red-text text-darken-2"> Growlithe </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 SP 20 </h6> <h6> HP 100 Type: Fire </h6>{' '}
+                                        <p> ATK 25 SP 20 </p> <p> HP 100 Type: Fire </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
@@ -495,7 +495,7 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="grey-text text-grey darken-3"> Meowth </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 </h6> <h6> HP 120 Type: Normal </h6>{' '}
+                                        <p> ATK 25 </p> <p> HP 120 Type: Normal </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
@@ -550,7 +550,7 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="green-text text-darken-3"> Oddish </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 SP 20 </h6> <h6> HP 100 Type: Grass </h6>{' '}
+                                        <p> ATK 25 SP 20 </p> <p> HP 100 Type: Grass </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
@@ -611,7 +611,7 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="lime-text text-darken-2"> Pikachu </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 SP 20 </h6> <h6> HP 100 Type: Electric </h6>{' '}
+                                        <p> ATK 25 SP 20 </p> <p> HP 100 Type: Electric </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
@@ -666,7 +666,7 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="blue-text text-darken-2"> Psyduck </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 SP 20 </h6> <h6> HP 100 Type: Water </h6>{' '}
+                                        <p> ATK 25 SP 20 </p> <p> HP 100 Type: Water </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
@@ -721,7 +721,7 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="grey-text text-grey darken-3"> Rattata </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 </h6> <h6> HP 120 Type: Normal </h6>{' '}
+                                        <p> ATK 25 </p> <p> HP 120 Type: Normal </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
@@ -776,7 +776,7 @@ export class Pokemon extends Component {
                                         <h4>
                                             <span className="blue-text text-darken-2"> Squirtle </span>{' '}
                                         </h4>{' '}
-                                        <h6> ATK 25 SP 20 </h6> <h6> HP 100 Type: Water </h6>{' '}
+                                        <p> ATK 25 SP 20 </p> <p> HP 100 Type: Water </p>{' '}
                                     </div>{' '}
                                     <div className="card-action">
                                         <button
