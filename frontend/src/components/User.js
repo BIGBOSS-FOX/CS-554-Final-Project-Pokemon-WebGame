@@ -46,17 +46,17 @@ class User extends Component {
                             <button className="btn pink lighten-1 z-depth-1" onClick={this.props.logOut}>Logout</button>
                         {/* </Link> */}
                 </div>
-                <div className='row'>
-                    <div className="col s12 m6 center">
+                <div className='row center newgame'>
+                    {/* <div className="col s12 m6 center"> */}
                         {/* <Link to={'/pokemon'}> */}
                             <button className="waves-effect waves-light btn-large cyan pulse" onClick={this.handleClick}>New Game</button>
                         {/* </Link> */}
-                    </div>
-                    <div className="col s12 m6 center">
+                    {/* </div> */}
+                    {/* <div className="col s12 m6 center">
                         <Link to={'/game'}>
                             <button className="waves-effect waves-light btn-large">Resume Game</button>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='row'>
                     <div className="col s12 m6 center">
