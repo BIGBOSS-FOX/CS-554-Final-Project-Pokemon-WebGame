@@ -146,15 +146,15 @@ class User extends Component {
                     <Leaderboard userList={this.props.fetch_mongodb.userList}/>
                 </Split> */}
 
-                <SplitPane split="vertical" minSize={400} maxSize = {1200} defaultSize={800}>
+                <SplitPane split="vertical" minSize={400} maxSize ={1200} defaultSize="50%">
                     {/* <div><History bestScore={this.props.auth_mongodb.userInfo.bestScore}/></div>
                     <div><Leaderboard userList={this.props.fetch_mongodb.userList}/></div> */}
-                    <Pane initialSize="50%" minSize="10%" maxSize="500px">  
+                    <Pane>  
                         {/* <div className="col s12 m6 center"> */}
                         <History bestScore={this.props.auth_mongodb.userInfo.bestScore}/>
                         {/* </div> */}
                     </Pane>
-                    <Pane initialSize="50%" minSize="10%" maxSize="500px">    
+                    <Pane>    
                         {/* <div className="col s12 m6 center"> */}
                         <Leaderboard userList={this.props.fetch_mongodb.userList}/>
                         {/* </div> */}
